@@ -115,7 +115,7 @@ if(!xp[message.author.id]){
     
 }
 
-let nxtLvl = xp[message.author.id].level * 300;
+let nxtLvl = xp[message.author.id].curlvl * 300;
 let curxp = xp[message.author.id].xp;
 let curlvl = xp[message.author.id].level;
 xp[message.author.id].xp = curxp + xpAdd;
