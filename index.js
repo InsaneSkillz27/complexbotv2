@@ -120,7 +120,6 @@ let curxp = xp[message.author.id].xp;
 let curlvl = xp[message.author.id].level;
 let nxtLvl = xp[message.author.id].level * 300;
 xp[message.author.id].xp = curxp + xpAdd;
-
 if(nxtLvl <= xp[message.author.id].xp){
     xp[message.author.id].level = curlvl + 1;
    let lvlup = new Discord.RichEmbed()
@@ -130,7 +129,6 @@ if(nxtLvl <= xp[message.author.id].xp){
 
    message.channel.send(lvlup).then(msg => {msg.delete(5000)});
 }
-
 fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
     if(err) console.log(err)
 });
