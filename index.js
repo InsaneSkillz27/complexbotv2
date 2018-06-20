@@ -380,4 +380,4 @@ if(cmd === `${prefix}ban`){
     
 })
 
-bot.login(botconfig.token);
+bot.login(process.enc.BOT_TOKEN);
