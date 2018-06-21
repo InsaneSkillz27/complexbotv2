@@ -9,7 +9,7 @@ const bot = new Discord.Client({disableEveryone: true});
 
 let coins = require("./coins.json")
 let xp = require("./xp.json")
-let warns = JSON.parse(fs.readFileSync("./ warnings.json", "utf8"));
+let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 
 bot.on("ready", async () => {
  console.log(`${bot.user.username} is online! `);
