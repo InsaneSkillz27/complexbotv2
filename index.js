@@ -8,6 +8,7 @@ const bot = new Discord.Client({disableEveryone: true});
 
 let coins = require("./coins.json")
 let xp = require("./xp.json")
+let warns = JSON.parse(fs.readFileSync("./ warnings.json", "utf8"));
 
 bot.on("ready", async () => {
  console.log(`${bot.user.username} is online! `);
@@ -24,6 +25,62 @@ bot.on("message", async message => {
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
 
+    if(cmd === `${prefix}warn`){
+
+        //!warn @user#id <reason>
+
+        if(!message.member.hasPermission(ADMINISTRATOR)) return message.reply("You connot warn this user.");
+        let wUser = message.guild.member(message.mentions.user.first(0)) || message.guild.members.get(args[0]);
+        if(!wUser) return message.reply("Could not find user")
+        if(wUser.hasPermission(ADMINISTRATOR0)) return message.reply("No can do!");
+        let wReason = args.join(" ").slice(22);
+
+        if(warns[wUser.if]) warns[wUser.id]={
+            warns: 0
+        };
+
+        warns[wUser.id].warns++;
+
+        fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
+            if (err) console.log(err)
+        });
+
+        let warnembed = new Discord.RichEmbed()
+        .setDescription("Warns")
+        .setAuthor(message.author.username)
+        .setColor(colors.red)
+        .addField("Warned user", wUser.tag)
+        .addField("Warned in", message.channel)
+        .addField("Warned by", message.author.id)
+        .addField("Number of Warnings", warns[wUser.id].warns)
+        .addField("Reason", wReason);
+
+        let warnChannel = message.guild.channels.find(`name`, "incidents");
+        if(!warnChannel) return message.reply("Couldn't find channel.");
+
+        warnChannel.send(warnembed);
+
+        if(warns[wUser.id].warns == 2){
+            let muterole2 = message.guild.roles.find(`name`, "[~]Muted");
+            if(!muterole2) return message.reply("Couldn't find [~]Muted (Create that role!)")
+
+            let mutetime2 = "1d";
+            await(wUser.addRole(muterole2.id));
+            message.channel.send(`${wUser.tag} has been tempmuted.`);
+
+            setTimeout(function(){
+                wUser.removeRole(muterole2.id)
+                message.channel.reply(`They have been unmuted.`)
+            })
+        }
+        if(warns[wUser.id].warns == 3){
+            message.guild.member(wUser).kick(reason);
+            message.channel.send(`${wUser.tag} has been kicked.`)
+        }
+    }
+
+
+    
     if(cmd === `${prefix}application`){
     
         let aembed = new Discord.RichEmbed()
@@ -340,7 +397,7 @@ if(cmd === `${prefix}ban`){
         .addField("Time", message.createdAt)
         .addField("Reason", reason);
 
-        let reportschannnel = message.guild.channels.find(`name`, "reports");
+        let reportschannnel = message.guild.channels.find(`name`, "incidents");
         if(!reportschannnel) return message.channel.send("Couldn't find reports channel.");
 
         message.delete().catch(O_o=>{});
