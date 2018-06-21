@@ -42,7 +42,7 @@ bot.on("message", async message => {
 
         warns[wUser.id].warns++;
 
-        fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
+        fs.writeFile("./warnings.json", JSON.stringify(warn), (err) => {
             if (err) console.log(err)
         });
 
