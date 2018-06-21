@@ -31,7 +31,7 @@ bot.on("message", async message => {
         //!warn @user#id <reason>
 
         if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You connot warn this user.");
-        let wUser = message.guild.member(message.mentions.user.first(0)) || message.guild.members.get(args[0]);
+        let wUser = message.guild.member(message.mentions.user.first()) || message.guild.members.get(args[0]);
         if(!wUser) return message.reply("Could not find user")
         if(wUser.hasPermission("ADMINISTRATOR")) return message.reply("No can do!");
         let wReason = args.join(" ").slice(22);
