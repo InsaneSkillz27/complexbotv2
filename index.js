@@ -40,12 +40,12 @@ bot.on("message", async message => {
             warns: 0
         };
 
-        warns[wUser.id].warn++;
-
         fs.writeFile("./warnings.json", JSON.stringify(warn), (err) => {
             if (err) console.log(err)
         });
 
+        warns[wUser.id].warn++;
+        
         let warnembed = new Discord.RichEmbed()
         .setDescription("Warns")
         .setAuthor(message.author.username)
