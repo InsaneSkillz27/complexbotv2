@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const ms = require("ms");
 const fs = require("fs")
 const colors = require("./colors.json")
-const warning = require("./warnings.json")
+const warns = require("./warnings.json")
 
 const bot = new Discord.Client({disableEveryone: true});
 
