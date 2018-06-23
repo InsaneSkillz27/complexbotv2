@@ -280,7 +280,7 @@ if(cmd === `${prefix}level`){
         }else if(rnumber === 6){
             message.channel.send("You rolled a 6!")
         }else{
-            message.channel.send("the dice fell under the table, never to be seen again. Roll agian.")
+            message.channel.send("the dice fell under the table, never to be seen again. Roll again.")
         };
         
     };
