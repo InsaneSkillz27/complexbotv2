@@ -50,7 +50,9 @@ bot.on("message", async message => {
         .addField("Requirement 2", "Must list The following: What role (if you dont know the roles, ask a fellow staff on your server), how long you have been in the server, why you want that role, and how active you are.")
         .setFooter("Bot was made by InsaneSkillz27#9243");
     
-        return message.channel.send(sembed), message.author.send(aembed);  
+        message.channel.send(sembed);
+        message.author.send(aembed);
+        return;
        
     
        }
