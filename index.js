@@ -84,6 +84,12 @@ bot.on("message", async message => {
     
     if(cmd === `${prefix}application`){
     
+        let sembed = new Discord.RichEmbed()
+        .addField(":white_check_mark: `A private message with more information has been sent to you`")
+        .setColor(colors.green)
+
+        return message.channel.send(sembed);
+        
         let aembed = new Discord.RichEmbed()
         .setAuthor(message.author.id)
         .setColor(colors.red)
