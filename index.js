@@ -26,8 +26,7 @@ bot.on("message", async message => {
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
 
-    
-	if (cmd === `${prefix}application`) {
+    if (cmd === `${prefix}application`) {
 
 		let sembed = new Discord.RichEmbed()
             .setDescription("Application template")
@@ -46,6 +45,7 @@ bot.on("message", async message => {
 		return;
 	}
 
+	
 
         if(cmd === `${prefix}apply`){
 
@@ -188,7 +188,26 @@ if(cmd === `${prefix}level`){
     
     //This is a list of all of the commands. Note: make sure to add to this!
 
+   let hembed2 = new Discord.RichEmbed()
+    .setAuthor(message.author.username)
+    .setColor(colors.green)
+    .addField("A private message with mor info has been sent to you.")
+    .setFooter("Command info")
+
     let bicon = bot.user.displayAvatarURL;   
+    
+    let hembed3 = new Discord.RichEmbed()
+    .setTitle("Help", "This bot is my first bot, if there are any problems or errors let me know join my server and let me know: https://discord.gg/8FkW55U")
+    .setColor(colors.red)
+    .addField("This bot has 13 overall commands and 2 are in development")
+    
+    let hembed4 = new Discord.RichEmbed()
+    .setTitle("*Fun/Informative commands*")
+    .setColor(colors.red)
+    .addField(`*${prefix}ping*`, "This command shows you your ping.")
+    .addField(`*${ping}roll*`, "This command will roll you a six sided die, what will you get?")
+    .setFooter("Bot is still in development.")
+
     let hembed = new Discord.RichEmbed()
        
        .setDescription("Commands")
@@ -211,8 +230,11 @@ if(cmd === `${prefix}level`){
        .addField("Info", "This bot is still in development. Also if a command does not work contact me (Insaneskillz27#9243)")
        .setFooter("Bot was made by Insaneskillz27#9243");
   
-       return message.author.send(hembed);
-    
+       message.channel.send(hembed2);
+       message.author.send(hembed3);
+       message.author.send(hembed);
+       message.author.send(hembed4);
+       return;
    }
    
     // !roll (Will give any number between 1-6m, which are the number of the dice, if it rolls a zero then it says to roll again).
