@@ -52,7 +52,7 @@ bot.on("message", async message => {
     
         message.channel.send(sembed);
         message.author.send(aembed);
-        return;
+
        
     
        }
