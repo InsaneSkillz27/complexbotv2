@@ -27,25 +27,23 @@ bot.on("message", async message => {
     let args = messageArray.slice(1);
 
     
-    if(cmd === `${prefix}application`){
-    
-        let sembed = new Discord.RichEmbed()
-        .addField(":white_check_mark: A private message with more information has been sent to you")
-        .setColor(colors.green)
-        
-        let aembed = new Discord.RichEmbed()
-        .setAuthor(message.author.id)
-        .setColor(colors.red)
-        .addField("Requirement 1", "Must take the application seriously (For the server owners out ther you must have an 'applications' channel and exactly that)")
-        .addField("Requirement 2", "Must list The following: What role (if you dont know the roles, ask a fellow staff on your server), how long you have been in the server, why you want that role, and how active you are.")
-        .setFooter("Bot was made by InsaneSkillz27#9243");
-    
-        message.channel.send(sembed);
-        message.author.send(aembed);
-        return;
-       
-    
-       }
+	if (cmd === `${prefix}application`) {
+
+		let sembed = new Discord.RichEmbed()
+			.addField(":white_check_mark: A private message with more information has been sent to you")
+			.setColor(colors.green);
+
+		let aembed = new Discord.RichEmbed()
+			.setAuthor(message.author.id)
+			.setColor(colors.red)
+			.addField("Requirement 1", "Must take the application seriously (For the server owners out ther you must have an 'applications' channel and exactly that)")
+			.addField("Requirement 2", "Must list The following: What role (if you dont know the roles, ask a fellow staff on your server), how long you have been in the server, why you want that role, and how active you are.")
+			.setFooter("Bot was made by InsaneSkillz27#9243");
+
+		message.channel.send(sembed);
+		message.author.send(aembed);
+		return;
+	}
 
 
         if(cmd === `${prefix}apply`){
