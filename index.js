@@ -30,10 +30,9 @@ bot.on("message", async message => {
 	if (cmd === `${prefix}application`) {
 
 		let sembed = new Discord.RichEmbed()
-            .setDescription(" ")
+            .setDescription("Application template")
             .setColor(colors.green)
             .addField(" A private message with more information has been sent to you")
-            .addField(" ")
             .setFooter("application template")
 		let aembed = new Discord.RichEmbed()
 			.setAuthor(message.author.id)
