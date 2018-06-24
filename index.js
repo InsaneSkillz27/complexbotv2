@@ -192,7 +192,7 @@ if(cmd === `${prefix}level`){
     .setAuthor(message.author.username)
     .setColor(colors.green)
     .addField("A private message with mor info has been sent to you.")
-    .setFooter("Command info")
+    .setFooter(bicon + "Complex v2's Command info!")
 
     let bicon = bot.user.displayAvatarURL;   
     
@@ -200,6 +200,7 @@ if(cmd === `${prefix}level`){
     .setTitle("Help", "This bot is my first bot, if there are any problems or errors let me know join my server and let me know: https://discord.gg/8FkW55U")
     .setColor(colors.red)
     .addField("This bot has 13 overall commands and 2 are in development")
+    .setFooter("More commands coming soon!")
     
     let hembed4 = new Discord.RichEmbed()
     .setTitle("*Fun/Informative commands*")
