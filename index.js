@@ -31,8 +31,7 @@ bot.on("message", async message => {
 
 		let sembed = new Discord.RichEmbed()
             .setColor(colors)
-            .setAuthor(message.author.username)
-            .addField(":white_check_mark: A private message with more information has been sent to you")
+            .addField(" A private message with more information has been sent to you")
             .setFooter("application template")
 		let aembed = new Discord.RichEmbed()
 			.setAuthor(message.author.id)
