@@ -205,7 +205,7 @@ if(cmd === `${prefix}level`){
     .setTitle("*Fun/Informative commands*")
     .setColor(colors.red)
     .addField(`*${prefix}ping*`, "This command shows you your ping.")
-    .addField(`*${ping}roll*`, "This command will roll you a six sided die, what will you get?")
+    .addField(`*${prefix}roll*`, "This command will roll you a six sided die, what will you get?")
     .setFooter("Bot is still in development.")
 
     let hembed = new Discord.RichEmbed()
