@@ -11,6 +11,13 @@ let coins = require("./coins.json")
 let xp = require("./xp.json")
 let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 
+bot.on("guildMemberAdd", async member => {
+    console.log(`${member.id} Joined The Server!`)
+
+let welcomechannel = member.guild.channels.find(`name`, "welcome_leave");
+welcomechannel.send(`Looks like ${member} has joined the party!`)
+});
+
 bot.on("ready", async () => {
  console.log(`${bot.user.username} is online! `);
  bot.user.setActivity(" with Complex Code! | !help ")
@@ -25,6 +32,7 @@ bot.on("message", async message => {
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
+
 
     if(cmd === `${prefix}info`){
         
