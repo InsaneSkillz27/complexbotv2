@@ -180,7 +180,7 @@ if(cmd === `${prefix}level`){
 }
    
     if(cmd === `${prefix}ping`){
-        message.channel.send("Pong: " + (message.createdTimestamp-  Date.now()) + "ms");
+        message.channel.send("Pong: " + (message.createdTimestamp - Date.now()) + "ms");
     }
 
 
