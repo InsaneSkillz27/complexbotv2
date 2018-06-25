@@ -192,11 +192,11 @@ if(cmd === `${prefix}level`){
     .setAuthor(message.author.username)
     .setColor(colors.green)
     .addField("A private message with mor info has been sent to you.")
-    .setFooter(bicon + "Complex v2's Command info!");
+    .setFooter("Complex v2's Command info!");
 
     let hembed3 = new Discord.RichEmbed()
     .setTitle("Help", "This bot is my first bot, if there are any problems or errors let me know join my server and let me know: https://discord.gg/8FkW55U")
-    .setColor("RANDOM")
+    .setColor(colors.green)
     .addField("This bot has 13 overall commands and 2 are in development")
     .setFooter("More commands coming soon!");
     
@@ -229,10 +229,10 @@ if(cmd === `${prefix}level`){
        .addField("Info", "This bot is still in development. Also if a command does not work contact me (Insaneskillz27#9243)")
        .setFooter("Bot was made by Insaneskillz27#9243");
   
-       message.channel.send(hembed2);
        message.author.send(hembed3);
        message.author.send(hembed);
        message.author.send(hembed4);
+       message.channel.send(hembed2);
        return;
 
 
