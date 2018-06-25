@@ -290,7 +290,7 @@ if(cmd === `${prefix}tempmute`){
 
     let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!tomute) return message.reply("Couldn't find user.");
-    if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("YOU CAN NOT MUTE THIS USER");
+    if(tomute.hasPermission("ADMINISTRATOR")) return message.reply("YOU CAN NOT MUTE THIS USER");
     let muterole = message.guild.roles.find(`name`, "[~] Muted")
     //start of createrole
     if(!muterole){
@@ -330,8 +330,8 @@ if(cmd === `${prefix}kick`){
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!kUser) return message.channel.send("Couldn't find user.");
     let kReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Complex v2 is not able to kick this user: 0_o")
-    if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("THAT PERSON CANT BE KICKED!")
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Complex v2 is not able to kick this user: 0_o")
+    if(kUser.hasPermission("ADMINISTRATOR")) return message.channel.send("THAT PERSON CANT BE KICKED!")
 
     let kickembed = new Discord.RichEmbed()    
     .setDescription("Kick")
@@ -358,8 +358,8 @@ if(cmd === `${prefix}ban`){
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!bUser) return message.channel.send("Couldn't find user.");
     let bReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("Complex v2 is not able to kick this user: 0_o")
-    if(bUser.hasPermission("MANAGE_MEMBERS")) return message.channel.send("THAT PERSON CANT BE KICKED!")
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Complex v2 is not able to kick this user: 0_o")
+    if(bUser.hasPermission("ADMINISTRATOR")) return message.channel.send("THAT PERSON CANT BE KICKED!")
 
     let banembed = new Discord.RichEmbed()    
     .setDescription("THE BAN HAMMER HAS BEEN DROPPED")
