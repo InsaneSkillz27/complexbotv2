@@ -180,7 +180,7 @@ if(cmd === `${prefix}level`){
 }
    
     if(cmd === `${prefix}ping`){
-        message.channel.send("Pong: " + (message.createdTimestamp - Date.now()) + "ms");
+        message.channel.send("Pong: " + (message.createdTimestamp-  Date.now()) + "ms");
     }
 
 
@@ -212,7 +212,7 @@ if(cmd === `${prefix}level`){
        
        .setDescription("Commands")
        .setThumbnail(bot.user.displayAvatarURL)
-       .setColor(colors.red)
+       .setColor(colors.green)
        .addField("Hello!", "Hello " + message.author.username +  " I am Complex v2 and these are my commands!\n")
        .addField("Command 1:", `${prefix}roll \nThis command will roll a six-sided die for you. What will you get?`)
        .addField("Command 2:", `${prefix}tempmute \nThis command will temporarily mute a user if you say the prefix: then tempmute an @mention and a time (Ex: !tempmute @user#id 1d)`)
