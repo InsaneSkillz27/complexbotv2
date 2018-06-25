@@ -28,6 +28,8 @@ bot.on("message", async message => {
 
     if(cmd === `${prefix}info`){
         
+        let sicon = message.guild.iconURL;
+
         let icembed = new Discord.RichEmbed()
         .setTitle("Complex studios info")
         .setColor("RANDOM")
