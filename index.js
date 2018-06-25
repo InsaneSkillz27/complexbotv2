@@ -36,8 +36,8 @@ bot.on("message", async message => {
         .addField("Info", "A PM with more info has been sent to you.")
         
         let infoembed = new Discord.RichEmbed()
-        .setTitle("***Complex Studios info***" + sicon)
-        .setColor("RANDOM")
+        .setTitle("***Complex Studios info***")
+        .setColor(colors.green)
         .addField("***About***", "This server is mainly a server to have fun and to talk to make friends! We dont main a game, we play all sorts of games. We just like to have a fun time!")
         .addField("***Reports***", "Reports are only seen by people that have authorizeation to go into the staff chat> You report will be taken seriously if it is a serious report. If there is anything that you would like to talk about in private, please pm the staff.")
         .addField("***Kicks and Bans***", "If you have been banned on our server then most likely u have done something bad, if u wnat to appeal plz dm the someone that can help. Same goes with mutes")
