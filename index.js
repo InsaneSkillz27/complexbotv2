@@ -26,12 +26,33 @@ bot.on("message", async message => {
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
 
+    if(cmd === `${prefix}info`){
+        
+        let icembed = new Discord.RichEmbed()
+        .setTitle("Complex studios info")
+        .setColor("RANDOM")
+        .addField("Info", "A PM with more info has been sent to you.")
+        
+        let infoembed = new Discord.RichEmbed()
+        .setTitle("***Complex Studios info***" + sicon)
+        .setColor("RANDOM")
+        .addField("***About***", "This server is mainly a server to have fun and to talk to make friends! We dont main a game, we play all sorts of games. We just like to have a fun time!")
+        .addField("***Reports***", "Reports are only seen by people that have authorizeation to go into the staff chat> You report will be taken seriously if it is a serious report. If there is anything that you would like to talk about in private, please pm the staff.")
+        .addField("***Kicks and Bans***", "If you have been banned on our server then most likely u have done something bad, if u wnat to appeal plz dm the someone that can help. Same goes with mutes")
+        .setFooter("Complex studios specific")
+    
+        message.channel.send(icembed);
+        message.author.send(infoembed);
+        return;
+
+    }
+
     if (cmd === `${prefix}application`) {
 
 		let sembed = new Discord.RichEmbed()
             .setDescription("Application template")
             .setColor(colors.green)
-            .addField(" A private message with more information has been sent to you")
+            .addField( "***Template***", "A PM with more information has been sent to you")
             .setFooter("application template")
 		let aembed = new Discord.RichEmbed()
 			.setAuthor(message.author.id)
@@ -212,7 +233,7 @@ if(cmd === `${prefix}level`){
        
        .setDescription("Commands")
        .setThumbnail(bot.user.displayAvatarURL)
-       .setColor(colors.green)
+       .setColor("RANDOM")
        .addField("Hello!", "Hello " + message.author.username +  " I am Complex v2 and these are my commands!\n")
        .addField("Command 1:", `${prefix}roll \nThis command will roll a six-sided die for you. What will you get?`)
        .addField("Command 2:", `${prefix}tempmute \nThis command will temporarily mute a user if you say the prefix: then tempmute an @mention and a time (Ex: !tempmute @user#id 1d)`)
