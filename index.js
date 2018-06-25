@@ -191,14 +191,14 @@ if(cmd === `${prefix}level`){
     let hembed2 = new Discord.RichEmbed()
     .setAuthor(message.author.username)
     .setColor(colors.green)
-    .addField("A private message with mor info has been sent to you.", "")
+    .addField("***Help***", "A private message with more info has been sent to you.")
     .setFooter("Complex v2's botinfo")
 
 
     let hembed3 = new Discord.RichEmbed()
     .setTitle("Help", "This bot is my first bot, if there are any problems or errors let me know join my server and let me know: https://discord.gg/8FkW55U")
     .setColor(colors.green)
-    .addField("This bot has 13 overall commands and 2 are in development", " ")
+    .addField(  "***Cmd Info***", "This bot has 13 overall commands and 2 are in development")
     .setFooter("More commands coming soon!");
     
     let hembed4 = new Discord.RichEmbed()
