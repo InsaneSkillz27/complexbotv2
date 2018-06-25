@@ -188,6 +188,8 @@ if(cmd === `${prefix}level`){
     
     //This is a list of all of the commands. Note: make sure to add to this! 
   
+    let bicon = bot.user.displayAvatarURL; 
+
     let hembed2 = new Discord.RichEmbed()
     .setAuthor(message.author.username)
     .setColor(colors.green)
