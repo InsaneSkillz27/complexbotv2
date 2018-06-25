@@ -186,35 +186,31 @@ if(cmd === `${prefix}level`){
 
    if(cmd === `${prefix}help`){
     
-    //This is a list of all of the commands. Note: make sure to add to this! 
-  
     let bicon = bot.user.displayAvatarURL; 
 
     let hembed2 = new Discord.RichEmbed()
     .setAuthor(message.author.username)
     .setColor(colors.green)
     .addField("A private message with mor info has been sent to you.")
-    .setFooter(bicon + "Complex v2's Command info!")
+    .setFooter(bicon + "Complex v2's Command info!");
 
     let hembed3 = new Discord.RichEmbed()
     .setTitle("Help", "This bot is my first bot, if there are any problems or errors let me know join my server and let me know: https://discord.gg/8FkW55U")
-    .setColor(colors.red)
+    .setColor("RANDOM")
     .addField("This bot has 13 overall commands and 2 are in development")
-    .setFooter("More commands coming soon!")
+    .setFooter("More commands coming soon!");
     
     let hembed4 = new Discord.RichEmbed()
     .setTitle("*Fun/Informative commands*")
-    .setColor(colors.red)
+    .setColor(colors.green)
     .addField(`*${prefix}ping*`, "This command shows you your ping.")
     .addField(`*${prefix}roll*`, "This command will roll you a six sided die, what will you get?")
-    .setFooter("Bot is still in development.")
-
-    let bicon = bot.user.displayAvatarURL; 
-
+    .setFooter("Bot is still in development.");
+    
     let hembed = new Discord.RichEmbed()
        
        .setDescription("Commands")
-       .setThumbnail(bicon)
+       .setThumbnail(bot.user.displayAvatarURL)
        .setColor(colors.red)
        .addField("Hello!", "Hello " + message.author.username +  " I am Complex v2 and these are my commands!\n")
        .addField("Command 1:", `${prefix}roll \nThis command will roll a six-sided die for you. What will you get?`)
@@ -238,6 +234,8 @@ if(cmd === `${prefix}level`){
        message.author.send(hembed);
        message.author.send(hembed4);
        return;
+
+
    }
    
     // !roll (Will give any number between 1-6m, which are the number of the dice, if it rolls a zero then it says to roll again).
