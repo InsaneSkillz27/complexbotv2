@@ -188,14 +188,14 @@ if(cmd === `${prefix}level`){
     
     //This is a list of all of the commands. Note: make sure to add to this!
 
-   let hembed2 = new Discord.RichEmbed()
+    let bicon = bot.user.displayAvatarURL;   
+  
+    let hembed2 = new Discord.RichEmbed()
     .setAuthor(message.author.username)
     .setColor(colors.green)
     .addField("A private message with mor info has been sent to you.")
     .setFooter(bicon + "Complex v2's Command info!")
 
-    let bicon = bot.user.displayAvatarURL;   
-    
     let hembed3 = new Discord.RichEmbed()
     .setTitle("Help", "This bot is my first bot, if there are any problems or errors let me know join my server and let me know: https://discord.gg/8FkW55U")
     .setColor(colors.red)
