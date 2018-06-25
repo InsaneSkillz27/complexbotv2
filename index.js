@@ -186,9 +186,7 @@ if(cmd === `${prefix}level`){
 
    if(cmd === `${prefix}help`){
     
-    //This is a list of all of the commands. Note: make sure to add to this!
-
-    let bicon = bot.user.displayAvatarURL;   
+    //This is a list of all of the commands. Note: make sure to add to this! 
   
     let hembed2 = new Discord.RichEmbed()
     .setAuthor(message.author.username)
@@ -208,6 +206,8 @@ if(cmd === `${prefix}level`){
     .addField(`*${prefix}ping*`, "This command shows you your ping.")
     .addField(`*${prefix}roll*`, "This command will roll you a six sided die, what will you get?")
     .setFooter("Bot is still in development.")
+
+    let bicon = bot.user.displayAvatarURL; 
 
     let hembed = new Discord.RichEmbed()
        
