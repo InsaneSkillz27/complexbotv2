@@ -67,10 +67,9 @@ let wembed = new Discord.RichEmbed()
 .addField("Account Created", whoUser.user.createdAt, true)
 .addField('Joined This Server', message.guild.members.find("id", whoUser.id).joinedAt, true)
 .addField("User ID", whoUser.id, true)
-.setColor(colors.green);
-
-message.channel.send(wembed)
-
+.setColor(colors.green)
+.setFooter("Searched User")
+message.channel.send(wembed);
 
 }
 
@@ -269,13 +268,13 @@ if(cmd === `${prefix}level`){
     let hembed3 = new Discord.RichEmbed()
     .setTitle("Help", "This bot is my first bot, if there are any problems or errors let me know join my server and let me know: https://discord.gg/8FkW55U")
     .setColor(colors.green)
-    .addField(  "***Cmd Info***", "This bot has 13 overall commands and 2 are in development and a *custom* join messages. For this function you must make sure that you have a channel called 'welcome_leave' and you must trun off the join messages that discord auto-sends.")
+    .addField(  "***Cmd Info***", "This bot has 14 overall commands and 2 are in development and ***custom*** join and leave messages. For this function you must make sure that you have a channel called 'welcome_leave' and you must trun off the join messages that discord auto-sends.")
     .setFooter("More commands coming soon!");
     
     let hembed4 = new Discord.RichEmbed()
     .setTitle("*Fun/Informative commands*")
     .setColor(colors.green)
-    .addField(`*${prefix}ping*`, "This command shows you your ping.")
+    .addField(`*${prefix}ping*`, "This command shows you your ping (in dev).")
     .addField(`*${prefix}roll*`, "This command will roll you a six sided die, what will you get?")
     .setFooter("Bot is still in development.");
     
@@ -298,6 +297,7 @@ if(cmd === `${prefix}level`){
        .addField("Command 11:", `${prefix}level \nThis command will let you see your level, how much xp you have and how much untill the next level`)
        .addField("Command 12:", `${prefix}application \nThis will show you the format for you application. MUST SEE BEFORE YOU APPLY!`)
        .addField("Command 13:", `${prefix}apply \nThis command will let you apply for a role to your server (MUST SEE: Before you apply you must say why you want to be that role, what role and why) (Ex:!apply @user#id Developer, beacuse i feel that I can do GREAT work for this server and I bring alot to table!)`)
+       .addField("Command 14:", `${prefix}whois \nThis command will show you a variety of thing about the user that you @ mention (Ex: !whois @user#id)`)
        .addField("Info", "This bot is still in development. Also if a command does not work contact me (Insaneskillz27#9243)")
        .setFooter("Bot was made by Insaneskillz27#9243");
   
