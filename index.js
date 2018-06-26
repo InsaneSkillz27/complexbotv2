@@ -56,7 +56,7 @@ bot.on("message", async message => {
     let args = messageArray.slice(1);
 
     if(cmd === `${prefix}whois`){
-        let whoUser = message.guild.members.get(args[0]);//checks for mentioned user
+        let whoUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     
     if(!whoUser){
         return message.channel.send("You must define a user.")
