@@ -12,17 +12,31 @@ let xp = require("./xp.json")
 let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 
 bot.on("guildMemberRemove", async member =>{
-    console.log(`${member.id} Has Joined The Server!`)
+    console.log(`${member.id} left the server!`)
 
     let welcomechannel = member.guild.channels.find(`name`, "welcome_leave");
-    welcomechannel.send(`Sad To See You Leave *${member.username}* !`)        
+    welcomechannel.send(`Sad To See You Leave *${member.username}*.`)        
 })
 
 bot.on("guildMemberAdd", async member => {
     console.log(`${member.id} Joined The Server!`)
 
-let welcomechannel = member.guild.channels.find(`name`, "welcome_leave");
-welcomechannel.send(`Looks like *${member.username}* has joined the party!`)
+
+    let welcomechannel = member.guild.channels.find(`name`, "welcome_leave");    
+let jrandom = Math.floor(Math.random()* 5) + 1;
+//creating a custom and random join message
+if(jrandom === 1){
+    welcomechannel.send(`Looks like ***${member.username}*** has joined the server!`)
+}else if(jrandom === 2){
+    welcomechannel.send(`OH NO. Looks like ***${member.username}*** has joined the server!`)
+}else if(jrandom === 3){
+    welcomechannel.send(`No need to fear, for ***${member.username}*** is here!`)
+}else if(jrandom === 4){
+    welcomechannel.send(`Everyone hide! ***${member.username}*** is here!!`)
+}else{
+    welcomechannel.send(`${member.username} HAS ARRIVED TO THE PARTY!`)
+}
+
 });
 
 bot.on("ready", async () => {
