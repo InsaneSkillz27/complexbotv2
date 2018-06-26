@@ -66,7 +66,7 @@ bot.on("message", async message => {
             .setFooter("application template")
 		let aembed = new Discord.RichEmbed()
 			.setAuthor(message.author.id)
-			.setColor(colors.red)
+			.setColor(colors.green)
 			.addField("Requirement 1", "Must take the application seriously (For the server owners out ther you must have an 'applications' channel and exactly that)")
 			.addField("Requirement 2", "Must list The following: What role (if you dont know the roles, ask a fellow staff on your server), how long you have been in the server, why you want that role, and how active you are.")
 			.setFooter("Bot was made by InsaneSkillz27#9243");
@@ -87,7 +87,7 @@ bot.on("message", async message => {
 
         let applyembed = new Discord.RichEmbed()
         .setAuthor(message.author.username)
-        .setColor(colors.red)
+        .setColor(colors.green)
         .addField("Applicant", `${aUser} With ID: ${aUser.id}`)
         .addField("Application: ", aReason)
         .setFooter("Any aplications that are not taken seriously will be taken a such!");
@@ -184,7 +184,7 @@ if(cmd === `${prefix}level`){
     let levelEmbed = new Discord.RichEmbed()
    
    .setAuthor(message.author.username)
-   .setColor(colors.red)
+   .setColor(colors.green)
    .addField("Level", curlvl, true)
    .addField("XP", curxp, true)
    .setFooter(`${difference} Till next level!`, message.author.displayAvatarURL);
