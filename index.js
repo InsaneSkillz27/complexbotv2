@@ -55,6 +55,24 @@ bot.on("message", async message => {
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
 
+    if(cmd === `${prefix}whois`){
+        let whoUser = message.mentions.user.first();//checks for mentioned user
+    
+    if(!whoUser){
+        return message.channel.send("You must define a user.")
+    }
+    
+let wembed = new Discord.RichEmbed()
+.setAuthor(whoUser.user.tag, whoUser.user.avatarURL)
+.addField("Account Created", whoUser.user.createdAt, true)
+.addField('Joined This Server', message.guild.members.find("id", whoUser.id).joinedAt, true)
+.addField("User ID", whoUser.id, true)
+.setColor(colors.green);
+
+message.channel.send(wembed)
+
+
+}
 
     if(cmd === `${prefix}info`){
         
@@ -233,7 +251,7 @@ if(cmd === `${prefix}level`){
 }
    
     if(cmd === `${prefix}ping`){
-        message.channel.send("Pong: " + (message.createdTimestamp - Date.now()) + "ms");
+        message.channel.send(`Pong, You have a ping of ${client.ping}ms!`)
     }
 
 
