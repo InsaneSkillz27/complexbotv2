@@ -35,7 +35,7 @@ if(jrandom === 1){
 }else if(jrandom === 4){
     welcomechannel.send(`Everyone hide! ***${member}*** is here!!`)
 }else{
-    welcomechannel.send(`${member.username} HAS ARRIVED TO THE PARTY!`)
+    welcomechannel.send(`${member} HAS ARRIVED TO THE PARTY!`)
 }
 
 });
