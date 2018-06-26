@@ -269,7 +269,7 @@ if(cmd === `${prefix}level`){
     let hembed3 = new Discord.RichEmbed()
     .setTitle("Help", "This bot is my first bot, if there are any problems or errors let me know join my server and let me know: https://discord.gg/8FkW55U")
     .setColor(colors.green)
-    .addField(  "***Cmd Info***", "This bot has 13 overall commands and 2 are in development")
+    .addField(  "***Cmd Info***", "This bot has 13 overall commands and 2 are in development and a *custom* join messages. For this function you must make sure that you have a channel called 'welcome_leave' and you must trun off the join messages that discord auto-sends.")
     .setFooter("More commands coming soon!");
     
     let hembed4 = new Discord.RichEmbed()
