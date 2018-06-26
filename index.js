@@ -4,6 +4,7 @@ const ms = require("ms");
 const fs = require("fs");
 const colors = require("./colors.json");
 const warn = require("./warnings.json");
+const botconfig = require("./botconfig.json");
 
 const bot = new Discord.Client({disableEveryone: true});
 
