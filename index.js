@@ -11,11 +11,18 @@ let coins = require("./coins.json")
 let xp = require("./xp.json")
 let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 
+bot.on("guildMemberRemove", async member =>{
+    console.log(`${member.id} Has Joined The Server!`)
+
+    let welcomechannel = member.guild.channels.find(`name`, "welcome_leave");
+    welcomechannel.send(`Sad To See You Leave *${member.username}* !`)        
+})
+
 bot.on("guildMemberAdd", async member => {
     console.log(`${member.id} Joined The Server!`)
 
 let welcomechannel = member.guild.channels.find(`name`, "welcome_leave");
-welcomechannel.send(`Looks like ${member} has joined the party!`)
+welcomechannel.send(`Looks like *${member.username}* has joined the party!`)
 });
 
 bot.on("ready", async () => {
@@ -28,7 +35,7 @@ bot.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
 
-    let prefix = "!";
+    let prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
