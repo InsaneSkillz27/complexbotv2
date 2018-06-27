@@ -16,7 +16,19 @@ bot.on("guildMemberRemove", async member =>{
     console.log(`${member.id} left the server!`)
 
     let welcomechannel = member.guild.channels.find(`name`, "welcome_leave");
-    welcomechannel.send(`Sad To See You Leave *${member}*.`)        
+    let lrandom = Math.floor(Math.random()* 5) + 1;
+    //creating random leave message with if else statement
+    if(lrandom === 1){
+        welcomechannel.send(`Sad to see you leave ${member}.`)
+    }else if (lrandom === 2){
+        welcomechannel.send(`Coast is clear everyone, ${member} has left the server.`)
+    }else if(lrandom === 3){
+        welcomechannel.send(`GOOD RIDDANCE. ${member} has left the server.`)
+    }else if(lrandom === 4){
+        welcomechannel.send(`Why have you left us ${member}, please come back!`)
+    }else{
+        welcomechannel.send(`Get your pitchforks, ${member} has abandon us!`)
+    };
 })
 
 bot.on("guildMemberAdd", async member => {
