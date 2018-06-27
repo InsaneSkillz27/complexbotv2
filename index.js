@@ -263,7 +263,9 @@ if(cmd === `${prefix}level`){
 }
    
     if(cmd === `${prefix}ping`){
-        message.channel.send("Pong, your ping is: `" + `${message.createdTimestamp - Date.now()}` + "ms`");
+        message.channel.send("***Pinging...***").then(sent =>{
+            sent.edit(`${bot.pings[0]}ms server response time, ${sent.createdTimestamp - message.createdTimestamp}ms for the round trip!`).catch(console.error);
+        })
     }
 
 
