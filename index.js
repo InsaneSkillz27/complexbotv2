@@ -262,7 +262,7 @@ if(cmd === `${prefix}level`){
 }
    
     if(cmd === `${prefix}ping`){
-        message.channel.send(`Pong, You have a ping of ${client.ping}ms!`)
+        message.channel.send(`Pong, You have a ping of ${bot.ping}ms!`)
     }
 
 
