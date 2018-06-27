@@ -15,8 +15,8 @@ let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 bot.on("channelCreate", async member =>{
     console.log(`${channel.name} has been created`)
 
-let chchannel = member.guild.channels.find(`name`, "channel_create")
-chchannel.send(`${channel.name} has been created!`)
+let chchannel = channel.guild.channels.find(`name`, "channel_create")
+chchannel.send(`${channel} has been created!`)
 })
 
 bot.on("guildMemberRemove", async member =>{
