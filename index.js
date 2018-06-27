@@ -289,7 +289,7 @@ if(cmd === `${prefix}level`){
     let hembed4 = new Discord.RichEmbed()
     .setTitle("*Fun/Informative commands*")
     .setColor(colors.green)
-    .addField(`*${prefix}ping*`, "This command shows you your ping (in dev).")
+    .addField(`*${prefix}ping*`, "This command shows you your ping.")
     .addField(`*${prefix}roll*`, "This command will roll you a six sided die, what will you get?")
     .setFooter("Bot is still in development.");
     
@@ -352,8 +352,8 @@ if(cmd === `${prefix}tempmute`){
     //!tempmute @user#id time (ex 1h(1 hour))
 
     let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!tomute) return message.reply("Couldn't find user.");
-    if(tomute.hasPermission("ADMINISTRATOR")) return message.reply("YOU CAN NOT MUTE THIS USER");
+    if(!tomute) return message.reply("🚫 ***You must mention 1 user.***");
+    if(tomute.hasPermission("ADMINISTRATOR")) return message.reply("🚫***You may not mute this specific user.***");
     let muterole = message.guild.roles.find(`name`, "[~] Muted")
     //start of createrole
     if(!muterole){
@@ -375,7 +375,7 @@ if(cmd === `${prefix}tempmute`){
     }
     //end of createrole
     let mutetime = args[1];
-    if(!mutetime) return message.reply("you must put in a form of time(in the form of s/m/h/d).");
+    if(!mutetime) return message.reply("🚫***you must put in a form of time(in the form of s/m/h/d).***");
 
     await (tomute.addRole(muterole.id));
     message.reply(`<@${tomute.id}> has been muted for ${ms(mutetime)}`);
@@ -391,10 +391,10 @@ if(cmd === `${prefix}kick`){
     //!kick @user#id reason
 
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!kUser) return message.channel.send("Couldn't find user.");
+    if(!kUser) return message.channel.send("🚫***You must mention a user.***");
     let kReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Complex v2 is not able to kick this user: 0_o")
-    if(kUser.hasPermission("ADMINISTRATOR")) return message.channel.send("THAT PERSON CANT BE KICKED!")
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("🚫***You are not able to kick this user.***")
+    if(kUser.hasPermission("ADMINISTRATOR")) return message.channel.send("🚫***You are not able to kick this user.***")
 
     let kickembed = new Discord.RichEmbed()    
     .setDescription("Kick")
@@ -406,7 +406,7 @@ if(cmd === `${prefix}kick`){
     .addField("Reason", kReason);
     
     let kickChannel = message.guild.channels.find( `name`, "announcements");
-    if(!kickChannel) return message.channel.send("can not find the Announcements channel.");
+    if(!kickChannel) return message.channel.send("🚫***You must create an 'announcements' text channel***");
 
     message.guild.member(kUser).kick(kReason);
     kickChannel.send(kickembed);
@@ -419,10 +419,10 @@ if(cmd === `${prefix}ban`){
     //cmd = !ban @user#id Reason
     
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!bUser) return message.channel.send("Couldn't find user.");
+    if(!bUser) return message.channel.send("🚫***You must mention a user.***");
     let bReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Complex v2 is not able to kick this user: 0_o")
-    if(bUser.hasPermission("ADMINISTRATOR")) return message.channel.send("THAT PERSON CANT BE KICKED!")
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("🚫***Complex v2 is not able to kick this user***")
+    if(bUser.hasPermission("ADMINISTRATOR")) return message.channel.send("🚫***You are not able to kick this user.***")
 
     let banembed = new Discord.RichEmbed()    
     .setDescription("THE BAN HAMMER HAS BEEN DROPPED")
@@ -434,7 +434,7 @@ if(cmd === `${prefix}ban`){
     .addField("Reason", bReason);
     
     let banChannel = message.guild.channels.find( `name`, "announcements");
-    if(!banChannel) return message.channel.send("can not find the Announcements channel.");
+    if(!banChannel) return message.channel.send("🚫***You mut create an 'announcements' text channel***");
    
     message.guild.member(bUser).ban(bReason);
     banChannel.send(banembed);
@@ -447,7 +447,7 @@ if(cmd === `${prefix}ban`){
        // cmd = !report @user#id reason
        
         let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-        if(!rUser) return message.guild.member("Couldn't find user");
+        if(!rUser) return message.guild.member("🚫***You must mention a user.***");
         let reason = args.join(" ").slice(22);
 
         let reportembed = new Discord.RichEmbed()
@@ -460,7 +460,7 @@ if(cmd === `${prefix}ban`){
         .addField("Reason", reason);
 
         let reportschannnel = message.guild.channels.find(`name`, "incidents");
-        if(!reportschannnel) return message.channel.send("Couldn't find reports channel.");
+        if(!reportschannnel) return message.channel.send("🚫***You must create an 'incidents' text channel.***");
 
         message.delete().catch(O_o=>{});
         reportschannnel.send(reportembed);
