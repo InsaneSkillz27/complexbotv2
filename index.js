@@ -12,6 +12,13 @@ let coins = require("./coins.json")
 let xp = require("./xp.json")
 let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 
+bot.on("channelCreate", async member =>{
+    console.log(`${channel.name} has been created`)
+
+let chchannel = member.guild.channels.find(`name`, "channel_create")
+chchannel.send(`${channel.name} has been created!`)
+})
+
 bot.on("guildMemberRemove", async member =>{
     console.log(`${member.id} left the server!`)
 
@@ -66,6 +73,7 @@ bot.on("message", async message => {
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
+
 
     if(cmd === `${prefix}whois`){
         let whoUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
