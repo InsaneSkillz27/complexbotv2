@@ -262,7 +262,7 @@ if(cmd === `${prefix}level`){
 }
    
     if(cmd === `${prefix}ping`){
-        message.channel.send("Pong: Your ping is" + `${message.createdTimestamp - Date.now()}` + "ms");
+        message.channel.send("Pong, your ping is: `" + `${message.createdTimestamp - Date.now()}` + "ms`");
     }
 
 
