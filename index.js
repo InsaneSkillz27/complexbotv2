@@ -67,6 +67,21 @@ bot.on("message", async message => {
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
 
+
+    if(cmd === `${prefix}clear`){
+        //!clear <number>
+        if(!message.member.hasPermission("ADMINISTRATOR"))return message.reply("You cannot do that");
+        if(!args[0])return message.channel.send("Usage: Clear <Number>");
+
+        message.channel.bulkDelete(args[0]).then(() =>{
+            message.channel.send(`Cleared ${args[0]}`).then(msg => mesg.delete(5000))
+        });
+    }
+
+    if(cmd === `${prefix}say`){
+        //!say <Word>
+    }
+
     if(cmd === `${prefix}8ball`){
         //!8ball <question>
         if(!args[2]) return message.reply("🚫***You must ask a full question.***")
