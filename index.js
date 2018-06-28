@@ -67,17 +67,21 @@ bot.on("message", async message => {
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
 
-    if(cmd === `${prefix}guess`){
-    let guess = args.join(" ").slice(22);
+    if(cmd === `${prefix}8ball`){
+        //!8ball <question>
+        if(!args[2]) return message.reply("🚫***You must ask a full question.***")
+        let replies = ["***Yes***", "***No***", "***I dont know***", "***Maybe***", "***Ask again later***."]
+        let result = Math.floor((Math.random() * replies.length))
+        let question = args.slice(1).join(" ");
+
+        let ballembed = new Discord.RichEmbed()
+        .setAuthor(message.author.tag)
+        .setColor(colors.green)
+        .addField("Question", question)
+        .addField("Answer", replies[result])
+
+        message.channel.send(ballembed);
     
-        let gnumber = Math.floor(Math.random()* 100) + 1;
-
-        if(guess = gnumber){
-            message.channel.send("You guessed right, the number was" + gnumber)
-        }else{
-            message.channel.send("You guessed wrong! The number was " + gnumber)
-        };
-
     }
     if(cmd === `${prefix}whois`){
         let whoUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
