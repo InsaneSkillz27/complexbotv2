@@ -298,8 +298,8 @@ if(cmd === `${prefix}level`){
     let hembed3 = new Discord.RichEmbed()
     .setTitle("Help", "This bot is my first bot, if there are any problems or errors let me know join my server and let me know: https://discord.gg/8FkW55U")
     .setColor(colors.green)
-    .addField(  "***Cmd Info***", "This bot has 14 overall commands and 2 are in development and ***custom*** join and leave messages. For this function you must make sure that you have a channel called 'welcome_leave' and you must trun off the join messages that discord auto-sends.")
-    .setFooter("More commands coming soon!");
+    .addField(  "***Cmd Info***", "This bot has 15 overall commands and 1 is in development and ***custom*** join and leave messages. For this function you must make sure that you have a channel called 'welcome_leave' and you must trun off the join messages that discord auto-sends.")
+    .setFooter("If a command has `<>` in it then it is required!");
     
     let hembed4 = new Discord.RichEmbed()
     .setTitle("*Fun/Informative commands*")
