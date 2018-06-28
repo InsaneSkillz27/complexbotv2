@@ -245,7 +245,7 @@ message.channel.send(wembed);
     .setColor(colors.green)
     .addField("💰", `${coinAmt} Coins added!`);
    
-    message.channel.send(coinembed).then(msg => {msg.delete(5000)});
+    message.channel.send(coinembed).then(msg => {msg.delete(2000)});
 }
 
 //!coins
