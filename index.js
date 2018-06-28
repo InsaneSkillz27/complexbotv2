@@ -79,7 +79,13 @@ bot.on("message", async message => {
     }
 
     if(cmd === `${prefix}say`){
-        //!say <Word>
+        //!say <Word> {input}
+        //<word> {output}
+        if(!message.member.hasPermission("MANAGE_MESSAGES"))return message.reply("You cannot do that");
+        let bmessage = args.join(" ");
+        message.delete().catch()
+        message.channel.send(bmessage);
+
     }
 
     if(cmd === `${prefix}8ball`){
