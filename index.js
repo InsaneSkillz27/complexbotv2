@@ -353,7 +353,7 @@ if(cmd === `${prefix}level`){
     let hembed3 = new Discord.RichEmbed()
     .setTitle("Help", "This bot is my first bot, if there are any problems or errors let me know join my server and let me know: https://discord.gg/8FkW55U")
     .setColor(colors.green)
-    .addField(  "***Cmd Info***", "This bot has 17 overall commands and 1 is in development and ***custom*** join and leave messages. For this function you must make sure that you have a channel called 'welcome_leave' and you must trun off the join messages that discord auto-sends.")
+    .addField(  "***Cmd Info***", "This bot has 18 overall commands and 1 is in development and ***custom*** join and leave messages. For this function you must make sure that you have a channel called 'welcome_leave' and you must trun off the join messages that discord auto-sends.")
     .setFooter("If a command has `<>` in it then it is required!");
     
     let hembed4 = new Discord.RichEmbed()
@@ -388,6 +388,7 @@ if(cmd === `${prefix}level`){
        .addField("Command 15:", `***${prefix}8ball <full question>*** \nThis will answer you question that you input, with a variety if different answers.`)
        .addField("Command 16:", `***${prefix}say <Word>*** \nThis will make the bot say whatever you input into it. Use this wisely`)
        .addField("Command 17:", `***${prefix}clear <number>*** \nThis command will bulk delete the amount of messages that you input into the command.`)
+       .addField("Command 18:", `***${prefix}setprefix <desired prefix>*** \nThis command will set the bot prefix to any prefix that you want. *Only 1 character is reccomended!*`)
        .addField("Info", "This bot is still in development. Also if a command does not work contact me (Insaneskillz27#9243)")
        .setFooter("Bot was made by Insaneskillz27#9243");
   
