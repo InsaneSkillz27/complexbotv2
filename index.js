@@ -108,7 +108,7 @@ bot.on("message", async message => {
         if(!args[0])return message.channel.send("Usage: Clear <Number>");
 
         message.channel.bulkDelete(args[0]).then(() =>{
-            message.channel.send(`Cleared ${args[0]}`).then(msg => mesg.delete(5000))
+            message.channel.send(`Cleared ${args[0]}`).then(msg => msg.delete(5000))
         });
     }
 
