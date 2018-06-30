@@ -151,7 +151,7 @@ let wembed = new Discord.RichEmbed()
 .addField('Joined This Server', message.guild.members.find("id", whoUser.id).joinedAt, true)
 .addField("User ID", whoUser.id, true)
 .setColor(colors.green)
-.setFooter("Searched User")
+.setFooter("Searched User" + whoUser);
 message.channel.send(wembed);
 
 }
