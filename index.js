@@ -86,7 +86,7 @@ bot.on("message", async message => {
         .setAuthor(message.author.id, message.author.displayAvatarURL)
         .setColor(colors.blue)
         .addField("Roll:", r36)
-        .addField("Your guess:", rguess)
+        .addField("Your guess", rguess);
 
         message.channel.send(rembed);
 
