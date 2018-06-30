@@ -12,6 +12,12 @@ let coins = require("./coins.json")
 let xp = require("./xp.json")
 let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 
+bot.on("channelCreate", async channel =>{
+    console.log(channel)
+    let eventchannel = member.guild.channels.find(`name`, "events");
+    eventchannel.send(`${channel} Has Been Created!`)
+})
+
 bot.on("guildMemberRemove", async member =>{
     console.log(`${member.id} left the server!`)
 
