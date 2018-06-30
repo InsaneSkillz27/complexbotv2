@@ -85,7 +85,6 @@ bot.on("message", async message => {
         let rembed = new Discord.RichEmbed()
         .setAuthor(message.author.id, message.author.displayAvatarURL)
         .setColor(colors.blue)
-        .setTitle("36 sided die roll")
         .addField("Roll:", r36)
         .addField("Your guess:", rguess)
 
