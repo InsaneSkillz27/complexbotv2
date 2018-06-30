@@ -11,8 +11,6 @@ const bot = new Discord.Client({disableEveryone: true});
 let coins = require("./coins.json")
 let xp = require("./xp.json")
 let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
-let cooldown = new Set()
-let cdseconds = 5;
 
 bot.on("guildMemberRemove", async member =>{
     console.log(`${member.id} left the server!`)
@@ -77,21 +75,9 @@ bot.on("message", async message => {
     let prefix = prefixes[message.guild.id].prefixes;
     console.log(prefix)
 
-    if(message.content.startsWith(prefix)) return;
-    if(cooldown.has(message.author.id)){
-        message.delete();
-       return message.reply("🚫***You must wait 5 seconds i beetween commands.***")
-    }
-    //if(!message.member.hasPermission("ADMINISTRATOR")){
-        cooldown.add(message.author.id);
-   // }
-   let messageArray = message.content.split(" ");
-   let cmd = messageArray[0];
-   let args = messageArray.slice(1);
-
-    setTimeout(() =>{
-        cooldown.delete(message.author.id)
-    }, cdseconds * 1000)
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
 
     if(cmd === `${prefix}setprefix`){
         //!setprefix <symbol>
