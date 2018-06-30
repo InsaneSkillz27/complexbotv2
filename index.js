@@ -83,7 +83,7 @@ bot.on("message", async message => {
         let rguess = args.slice(1).join(" ")
 
         let rembed = new Discord.RichEmbed()
-        .setAuthor(message.author.user.tag, message.author.displayAvatarURL)
+        .setAuthor(message.author.id, message.author.displayAvatarURL)
         .setColor(colors.blue)
         .setTitle("36 sided die roll")
         .addField("Roll:", r36)
