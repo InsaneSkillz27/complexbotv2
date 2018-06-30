@@ -77,10 +77,6 @@ bot.on("message", async message => {
     let prefix = prefixes[message.guild.id].prefixes;
     console.log(prefix)
 
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
-
     if(message.content.startsWith(prefix)) return;
     if(cooldown.has(message.author.id)){
         message.delete();
@@ -89,6 +85,9 @@ bot.on("message", async message => {
     //if(!message.member.hasPermission("ADMINISTRATOR")){
         cooldown.add(message.author.id);
    // }
+   let messageArray = message.content.split(" ");
+   let cmd = messageArray[0];
+   let args = messageArray.slice(1);
 
     setTimeout(() =>{
         cooldown.delete(message.author.id)
