@@ -3,14 +3,12 @@ const Discord = require("discord.js");
 const ms = require("ms");
 const fs = require("fs");
 const colors = require("./colors.json");
-const warn = require("./warnings.json");
 const botconfig = require("./botconfig.json");
 
 const bot = new Discord.Client({disableEveryone: true});
 
 let coins = require("./coins.json")
 let xp = require("./xp.json")
-let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 
 bot.on("guildMemberRemove", async member =>{
     console.log(`${member.id} left the server!`)
@@ -32,7 +30,7 @@ bot.on("guildMemberRemove", async member =>{
 })
 
 bot.on("guildMemberAdd", async member => {
-    console.log(`${member.if} Joined The Server!`)
+    console.log(`${member.id} Joined The Server!`)
 
 
     let welcomechannel = member.guild.channels.find(`name`, "welcome_leave");    
@@ -78,6 +76,22 @@ bot.on("message", async message => {
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
+
+    if(cmd === `${prefix}roll36`){
+        //rolls a 36 sides dice            
+        let r36 = Math.floor(Math.random() * 36) + 1;
+        let rguess = args.slice(1).join(" ")
+
+        let rembed = new Discord.RichEmbed()
+        .setAuthor(message.author.user.tag, message.author.displayAvatarURL)
+        .setColor(colors.blue)
+        .setTitle("36 sided die roll")
+        .addField("Roll:", r36)
+        .addField("Your guess:", rguess)
+
+        message.channel.send(rembed);
+
+    }
 
     if(cmd === `${prefix}setprefix`){
         //!setprefix <symbol>
