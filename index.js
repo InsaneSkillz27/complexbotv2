@@ -11,6 +11,8 @@ const bot = new Discord.Client({disableEveryone: true});
 let coins = require("./coins.json")
 let xp = require("./xp.json")
 let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
+let cooldown = new Set()
+let cdseconds = 5;
 
 bot.on("guildMemberRemove", async member =>{
     console.log(`${member.id} left the server!`)
@@ -46,8 +48,10 @@ if(jrandom === 1){
     welcomechannel.send(`No need to fear, for ***${member}*** is here!`)
 }else if(jrandom === 4){
     welcomechannel.send(`Everyone hide! ***${member}*** is here!!`)
-}else{
+}else if(jrandom === 5){
     welcomechannel.send(`${member} HAS ARRIVED TO THE PARTY!`)
+}else if(jrandom === 6){
+    welcomechannel.send(`HIDE UR MEMES. ***${member}***`)
 }
 
 });
@@ -76,6 +80,19 @@ bot.on("message", async message => {
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
+
+    if(message.content.startsWith(prefix)) return;
+    if(cooldown.has(message.author.id)){
+        message.delete();
+       return message.reply("🚫***You must wait 5 seconds i beetween commands.***")
+    }
+    //if(!message.member.hasPermission("ADMINISTRATOR")){
+        cooldown.add(message.author.id);
+   // }
+
+    setTimeout(() =>{
+        cooldown.delete(message.author.id)
+    }, cdseconds * 1000)
 
     if(cmd === `${prefix}setprefix`){
         //!setprefix <symbol>
