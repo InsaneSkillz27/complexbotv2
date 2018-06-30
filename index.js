@@ -77,21 +77,6 @@ bot.on("message", async message => {
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
 
-    if(cmd === `${prefix}roll36`){
-        //rolls a 36 sides dice            
-        let r36 = Math.floor(Math.random() * 36) + 1;
-        let rguess = args.slice(1).join(" ")
-
-        let rembed = new Discord.RichEmbed()
-        .setDescription("Guessing game.")
-        .setColor(colors.blue)
-        .addField("Roll:", r36)
-        .addField("Your guess", rguess);
-
-        message.channel.send(rembed);
-
-    }
-
     if(cmd === `${prefix}setprefix`){
         //!setprefix <symbol>
 
