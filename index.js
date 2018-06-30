@@ -83,7 +83,7 @@ bot.on("message", async message => {
         let rguess = args.slice(1).join(" ")
 
         let rembed = new Discord.RichEmbed()
-        .setAuthor(message.author.id, message.author.displayAvatarURL)
+        .setDescription("Guessing game.")
         .setColor(colors.blue)
         .addField("Roll:", r36)
         .addField("Your guess", rguess);
