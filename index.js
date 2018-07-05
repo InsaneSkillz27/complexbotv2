@@ -353,7 +353,7 @@ if(cmd === `${prefix}level`){
     let hembed3 = new Discord.RichEmbed()
     .setTitle("Help", "This bot is my first bot, if there are any problems or errors let me know join my server and let me know: https://discord.gg/8FkW55U")
     .setColor(colors.green)
-    .addField(  "***Cmd Info***", "This bot has 18 overall commands and 1 is in development and ***custom*** join and leave messages. For this function you must make sure that you have a channel called 'welcome_leave' and you must trun off the join messages that discord auto-sends.")
+    .addField(  "***Cmd Info***", "This bot has 18 overall commands and 0 are currently in development. This bot also has ***custom*** join and leave messages. For this function you must make sure that you have a channel called 'welcome_leave' and you must trun off the join messages that discord auto-sends.")
     .setFooter("If a command has `<>` in it then it is required!");
     
     let hembed4 = new Discord.RichEmbed()
@@ -372,7 +372,7 @@ if(cmd === `${prefix}level`){
        .setColor(colors.blue)
        .addField("Hello!", "Hello " + message.author.username +  " I am Complex v2 and these are my commands!\n")
        .addField("Command 1:", `***${prefix}roll*** \nThis command will roll a six-sided die for you. What will you get?`)
-       .addField("Command 2:", `***${prefix}tempmute <@user#id time>*** \nThis command will temporarily mute a user for a set amount of time.`)
+       .addField("Command 2:", `***${prefix}tempmute <@user#id time (Ex: 1d)>*** \nThis command will temporarily mute a user for a set amount of time.`)
        .addField("Command 3:", `***${prefix}kick <@user#id reason>*** \nThis command will kick the mentioned user and send the kick report to the announcements channel.`)
        .addField("Command 4:", `***${prefix}ban <@user#id reason>*** \nThis command will ban the mentioned user and send the ban report to the announcements channel.`)
        .addField("Command 5:", `***${prefix}report <@user#id reason>*** \nThis command report the mentioned user and send it to the incedents channel.`)
