@@ -47,7 +47,7 @@ if(jrandom === 1){
 }else if(jrandom === 5){
     welcomechannel.send(`${member} HAS ARRIVED TO THE PARTY!`)
 }else if(jrandom === 6){
-    welcomechannel.send(`HIDE UR MEMES. ***${member}***`)
+    welcomechannel.send(`HIDE UR MEMES. ***${member}*** has joined thet server`)
 }
 
 });
@@ -430,12 +430,12 @@ if(cmd === `${prefix}tempmute`){
     let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!tomute) return message.reply("🚫 ***You must mention 1 user.***");
     if(tomute.hasPermission("ADMINISTRATOR")) return message.reply("🚫***You may not mute this specific user.***");
-    let muterole = message.guild.roles.find(`name`, "[~] Muted")
+    let muterole = message.guild.roles.find(`name`, "~muted~")
     //start of createrole
     if(!muterole){
        try{
         muterole = await message.guild.createRole({
-            name: "[~] Muted", 
+            name: "~muted~", 
             color: "#000000",
             permissions:[]
         })
