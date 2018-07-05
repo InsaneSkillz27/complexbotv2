@@ -430,17 +430,17 @@ if(cmd === `${prefix}tempmute`){
     let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!tomute) return message.reply("🚫 ***You must mention 1 user.***");
     if(tomute.hasPermission("ADMINISTRATOR")) return message.reply("🚫***You may not mute this specific user.***");
-    let muterole = message.guild.roles.find(`name`, "~muted~")
+    let muterole = message.guild.roles.find(`name`, "[~] Muted")
     //start of createrole
     if(!muterole){
        try{
         muterole = await message.guild.createRole({
-            name: "~muted~", 
+            name: "[~] Muted", 
             color: "#000000",
             permissions:[]
         })
         message.guild.channel.forEach(async (channel, id) => {
-            await channel.overwritePermission(muterole, {
+            await channel.overwritePermissions(muterole, {
                 SEND_MESSAGES: false,
                 ADD_REACTIONS: false
             });
