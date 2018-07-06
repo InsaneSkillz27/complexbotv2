@@ -88,7 +88,7 @@ bot.on("message", async message => {
         if(wUser.hasPermission("MANAGE_MESSAGES")) return message.reply("***You may not warn this user***")
         let wReason = args.join(" ").slice(22);
 
-        if(!warns[wUser.id]) warns[wuser.id] = {
+        if(!warns[wUser.id]) warns[wUser.id] = {
             warns: 0
         };
 
