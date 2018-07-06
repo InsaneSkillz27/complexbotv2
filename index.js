@@ -15,7 +15,7 @@ bot.on("channelDelete", async channel => {
 
     console.log(`${channel.name} has been created`)
 
-    let sChannel = channel.guilds.channels.find(`name`, "events")
+    let sChannel = channel.guild.channels.find(`name`, "events")
     sChannel.send(`${channel} has been created`)
 
 })
