@@ -11,7 +11,7 @@ let coins = require("./coins.json")
 let xp = require("./xp.json")
 let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"))
 
-bot.on("channelDelete", async channel => {
+bot.on("channelCreate", async channel => {
 
     console.log(`${channel.name} has been created`)
 
