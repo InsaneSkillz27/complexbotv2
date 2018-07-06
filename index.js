@@ -83,7 +83,7 @@ bot.on("message", async message => {
 
         //warn <@user#id Reason>
         if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("***You maynot warn this user***");
-        let wUser = message.guild.member(message.mentions.user.first()) || message.members.get(args[0])
+        let wUser = message.guild.member(message.mentions.user.first() || message.members.get(args[0]))
         if(!wUser) return message.reply("***You must provide a user.***")
         if(wUser.hasPermission("MANAGE_MESSAGES")) return message.reply("***You may not warn this user***")
         let wReason = args.join(" ").slice(22);
