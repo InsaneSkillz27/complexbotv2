@@ -545,7 +545,7 @@ if(cmd === `${prefix}kick`){
     .addField("Time", message.createdAt)
     .addField("Reason", kReason);
     
-    let kickChannel = message.guild.channels.find( `name`, "announcements");
+    let kickChannel = message.guild.channels.find( `name`, "incidents");
     if(!kickChannel) return message.channel.send("🚫***You must create an 'announcements' text channel***");
 
     message.guild.member(kUser).kick(kReason);
