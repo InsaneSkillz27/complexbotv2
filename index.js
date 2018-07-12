@@ -106,8 +106,10 @@ bot.on("message", async message => {
         let pCoins = coins[pUser.id].coins;
         let sCoins = coins[message.author.id].coins;
 
-        if(sCoins < args[0]) return message.reply("You don't have enought coins!");
-
+        if(sCoins < args[0]) {
+            message.reply("You dont have enough coins!")
+            return
+        }
         coins[message.author.id] = {
             coins: sCoins - parseInt(args[1])
         };
