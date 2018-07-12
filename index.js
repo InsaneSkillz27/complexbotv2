@@ -118,7 +118,7 @@ bot.on("message", async message => {
 
         message.channel.send(`${message.author} has given ${pUser} ${args[1]} coins!`)
 
-        fs.writeFile(",/coins.json", JSON.stringify(coins), (err) => {
+        fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
             if(err) console.log(err)
         });
 
