@@ -464,7 +464,7 @@ if(cmd === `${prefix}level`){
     .addField(`***${prefix}roll***`, "This command will roll you a six sided die, what will you get?")
     .addField(`***${prefix}8ball <question>*** `, "For this command you must ask a full question. The bot picks from an array of multiple differnet answers.")
     .addField(`***${prefix}say <word>***`, "This command will make the bot say whatever you input into it. Use this wisely.")
-    .addField("This bot also has an ***Xp*** system and a ***Coins*** system!")
+    .addField("This bot also has an ***Xp*** system and a ***Coins*** system!", "xp and coins are given at random.")
     .setFooter("Bot is still in development.");
     
     let hembed = new Discord.RichEmbed()
