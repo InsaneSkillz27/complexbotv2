@@ -454,7 +454,7 @@ if(cmd === `${prefix}level`){
     let hembed3 = new Discord.RichEmbed()
     .setTitle("Help", "This bot is my first bot, if there are any problems or errors let me know join my server and let me know: https://discord.gg/8FkW55U")
     .setColor(colors.green)
-    .addField(  "***Cmd Info***", "This bot has 18 overall commands and 0 are currently in development. This bot also has ***custom*** join and leave messages. For this function you must make sure that you have a channel called 'welcome_leave' and you must trun off the join messages that discord auto-sends.")
+    .addField(  "***Cmd Info***", "This bot has 20 overall commands and 1 are currently in development. This bot also has ***custom*** join and leave messages. For this function you must make sure that you have a channel called 'welcome_leave' and you must turn off the join messages that discord auto-sends.")
     .setFooter("If a command has `<>` in it then it is required!");
     
     let hembed4 = new Discord.RichEmbed()
@@ -464,6 +464,7 @@ if(cmd === `${prefix}level`){
     .addField(`***${prefix}roll***`, "This command will roll you a six sided die, what will you get?")
     .addField(`***${prefix}8ball <question>*** `, "For this command you must ask a full question. The bot picks from an array of multiple differnet answers.")
     .addField(`***${prefix}say <word>***`, "This command will make the bot say whatever you input into it. Use this wisely.")
+    .addField("This bot also has an ***Xp*** system and a ***Coins*** system!")
     .setFooter("Bot is still in development.");
     
     let hembed = new Discord.RichEmbed()
@@ -490,6 +491,8 @@ if(cmd === `${prefix}level`){
        .addField("Command 16:", `***${prefix}say <Word>*** \nThis will make the bot say whatever you input into it. Use this wisely`)
        .addField("Command 17:", `***${prefix}clear <number>*** \nThis command will bulk delete the amount of messages that you input into the command.`)
        .addField("Command 18:", `***${prefix}setprefix <desired prefix>*** \nThis command will set the bot prefix to any prefix that you want. *Only 1 character is reccomended!*`)
+       .addField("Command 19:", `***${prefix}warn <@user#id reason>*** \nThis is still in development`)
+       .addField("Command 20:", `***${prefix}pay <@user#id coin amount>*** \nThis command will pay the mentioned user with the amount of coins that you set.`)
        .addField("Info", "This bot is still in development. Also if a command does not work contact me (Insaneskillz27#9243)")
        .setFooter("Bot was made by Insaneskillz27#9243");
   
