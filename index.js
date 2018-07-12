@@ -66,7 +66,7 @@ let prefix = prefixes[message.guild.id].prefixes;
 
 bot.on("ready", async () => {
  console.log(`${bot.user.username} is online! `);
- bot.user.setActivity(` With Complex Code! | ${prefix}help`)
+ bot.user.setActivity(" With Complex Code! | !help")
 }); 
 
 
