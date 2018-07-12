@@ -64,7 +64,7 @@ if(jrandom === 1){
 
 bot.on("ready", async () => {
  console.log(`${bot.user.username} is online! `);
- bot.user.setActivity(" with Complex Code! | !help ")
+ bot.user.setActivity(` With Complex Code! | ${prefix}help`)
 }); 
 
 
